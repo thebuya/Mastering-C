@@ -1,0 +1,4 @@
+:chmod +x myscript.sh
+
+chsh -s /bin/zsh
+chsh -s /bin/bash

@@ -1,0 +1,388 @@
+#SHELL_SCRIPTING_CRASH_NOTES
+--------------------------------------------------------------------------
+#  chmod +x name_file --- > Makes it Executable.
+#  which bash ---- > Show you where Bash is on File.
+#  #! /bin/bash ---- > Turns to bash
+# cp file /dir/dir --- > Copying file to directory.
+# mv - help
+# grep--
+
+
+
+
+
+
+
+--------------------------------------------------------------------------
+
+#----From-Shell_Scripting_Course_For_Beginners
+#----001.ECHO COMMAND
+# echo Hello World!
+
+
+
+--------------------------------------------------------------------------
+
+#----002.VARIABLES
+#Uppercase_By_Norm
+#Letters, Numbers, Underscores
+#|
+#NAME="Buya"
+#echo "My name is $NAME"
+#echo "My name is ${NAME}
+#---The-Money-Sign-is-a-JS-Literal variable
+
+
+
+--------------------------------------------------------------------------
+
+#----003.USER INPUT
+#read -p "Enter your name: " NAME
+#echo "Hello $NAME, nice to meet you!"
+
+
+
+--------------------------------------------------------------------------
+
+#---004.SIMPLE_IF_STATEMENT
+#if [ "$NAME" == "Buya"]
+#then
+#	echo "Your name is Buya"
+#fi
+
+
+--------------------------------------------------------------------------
+
+#---005A._IF_ELSE
+#if [ "$NAME" == "Buya"]
+#then
+#        echo "Your name is Buya"
+#else
+#	echo "Your name is not Buya"
+#fi
+
+
+
+
+--------------------------------------------------------------------------
+#---005B._IF_ELSE
+#if [ "$NAME" == "Buya"]
+#then
+#        echo "Your name is Buya"
+#elif [ "$NAME" == "Morris" ]
+# then
+#	echo "Your name is Morris"
+#else
+#       echo "Your name is not Buya"
+#fi
+
+
+--------------------------------------------------------------------------
+
+
+#---006.COMPARISON
+#NUM1=3
+#NUM2=5
+#if [ "$NUM1" -gt "$NUM2" ]
+#then
+#	echo "$NUM1 is greater than $NUM2"
+#else	
+#	echo "$NUM1 is less than $NUM2"
+#fi
+
+######----Comparison-----
+#---Could Use these inside if statements.
+# val1 -eq val2 Returns true if the values are equal
+# val1 -ne val2 Returns true if the values are not equal
+# val1 -gt val2 Returns true if val1 is greater than val2
+# val1 -ge val2 Returns true if val1 is greater than or equal to val2
+# val1 -lt val2 Returns true if val1 is less than val2
+# val1 -le val2 Returns true if val1 is less than or equal to val2
+# val1 -eq val2 Returns true if the values are equal
+
+
+--------------------------------------------------------------------------
+
+#####---File-Handling----
+# -d file 	True if the file is a directory
+# -f file       True if the provided string is a file.
+# -g file       True if the group id is set on a file.
+# -s file	True if the file has a non-zero size
+# -r file       True if the file is readable
+# -e file	True if the file exists [Note that this is not particlarly portable, thus -f is g# enerally used]
+# -w		True if the file is writable
+# -u            True if the user id is set on a file
+# -x 		True if the file is an executable file.
+
+--------------------------------------------------------------------------
+
+
+#---007.CASE-STATEMENT
+#read -p "Are you 21 or over ? Y/N" ANSWER
+#case "$ANSWER" in
+#	[yY] | [yY][Ee][sS])
+#	echo "You can have a beer :)"
+#	;;
+#	[nN] | [Nn] | [oO])
+#	echo "Sorry, no drinking"
+#	;;
+#	*)
+#	echo "Please enter u/yes or n/no"
+#	;;
+#esac
+
+
+--------------------------------------------------------------------------
+
+
+
+#---008.SIMPLE-FOR-LOOP
+
+#NAMES="Morris Sheila Fahd Ayub"
+#for NAME in $NAMES #Calling_this_variable
+#	do
+#	echo "Hello $NAME"
+#	done
+
+
+--------------------------------------------------------------------------
+
+
+
+
+#---009.FOR-LOOP=TO-RENAME-FILES
+
+#FILES=$(ls *.txt)
+#----List all text extensions
+#NEW="new"
+#for FILE in $FILES
+#	do 
+#	echo "Renaming $FILE to new-$FILE"
+#	mv $FILE $NEW-$FILE
+#done
+#----Could_Help_In_Renaming_Alot_Of_Files.
+
+
+
+--------------------------------------------------------------------------
+
+
+
+#---010.WHILE-LOOP = READ_THROUGH_A_FILE_LINE_BY_LINE
+ 
+#LINE=1
+#while read -r CURRENT_LINE
+#	do
+#	echo "$LINE: $CURRENT_LINE"
+#	((LINE++))
+#done < "./new-text.txt"
+
+
+--------------------------------------------------------------------------
+
+
+
+#---011.FUCNTIONS
+
+#function sayHello()
+#{
+#	echo "Hello World"
+#}
+#sayHello
+
+
+
+--------------------------------------------------------------------------
+
+
+#---012.FUNCTION_WITH_PARAGRAPH
+
+#function greet()
+#{
+#echo "Hello, I am $1 and I am $2"
+#}
+#greet "Buya" "25"
+
+
+
+--------------------------------------------------------------------------
+
+#---013.CREATE_FOLDER_AND_WRITE_TO_FILE
+
+#mkdir hello
+#touch "hello/world.txt"
+#echo "Hello World" >> "hello/world.txt"
+#echo "Created hello/world.txt"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#-----| Shell Scripting Crash Course | Linux Certification Training.
+#------------------------------------------------------------------------
+
+
+#Changing modes - CHMOD
+#chmod ugo filename
+#chmod -user-group-other
+
+#0 -- 0 -- nothing
+#1 -- 1 -- execute
+#2 -- 2 -- write
+#3 -- 2+1 --  w+x
+#4 -- 4 -- read
+#5 -- 4+1 -- r+x
+#6 -- 4+2 -- r+w
+#7 -- 4+2+1 -- r+w+x
+
+#chmod 777 filename
+#	1st 7 -- Permission to read write and execute
+#	2nd 7 -- Persmission to rwx for user group also
+#	3rd 7 -- so does everyone else
+
+#............................
+
+# : man + help ------ > General Command Manual before Scripting.
+# Press "h" ------- > Becomes a summary of commands.
+# Press "q" ------- > Quit when Done.
+#--------------------------------------------------------------------------
+
+
+
+#VARIABLES
+#Character string to which we assign a value
+
+#: Local Variables
+#: Environment Variable -> Some programms need them; 
+#: Shell Variable -> Set by shell, and requred by it tofunction properly; could be local
+# or environment.
+
+# ...........................
+
+#Scalar Variable --- > Hold one value at one-time e.g NAME-"GT"
+#unset var --- > Directs Shell to stop tracking said variable. e.g unset VAR
+#ReadOnly Var -- > "Var : Readonly Variable" Can't
+#Special Variable --> Preceeded by the dollar sign
+# ->  $# - Return number of arguments applied tpo script
+# ->  $0 - Filename of script
+# ->  $* - All arguments that are double quoted
+# ->  $@ - All arguments that are individually double-quoted
+# ->  $$ - Process ID
+# ->  $? - Exit status of the command you've executed. 
+# ->  $1...9 -> Correspond with argument with which script was wrote.
+
+#echo "File name: $0"  ------returns--> File name
+#echo "First Parameter: $1"  ------returns--> First Parameter
+#echo "Second Parameter: $2"  ------returns--> Second Parameter
+#echo "Quoted Values: $@"  ------returns--> 
+#echo "Quoted Values: $*"  ------returns-->  
+#echo "No of parameters: $#"  ------returns-->
+
+
+
+
+
+#--------------------------------------------------------------------------
+
+
+
+
+#BASIC OPERATORS
+#Arithmetic Operators
+# ...........................
+
+
+# Relational Operators
+# ...........................#Works for numeric values.
+# -eq -> Checks if value of 2 operands are equal or not \If yes, thenTrue\
+# -ne -> Checks if value of 2 operands are equal or not \if Not equal, then True\
+# -gt -> Checks if value of left operands is greater than value of right  \if no, True\
+# -lt -> Checks if value of left operands is less than value of right \yes, True\
+# -ge -> Checks if value of left is greater than or equal to right; \If yes, True \
+# -le -> Checks if value of left is less than or equal to right \if Yes. True\
+
+
+# Boolean Operators
+# ...........................
+# !  -> Logical negotiation --- Inverts a true condition into false and Vice Versa
+# -o -> Logical Or. ---- If one of operands is true, condition becomes True
+# -a -> This logical AND.---- if both operands are true, then condition becomes true
+# 	otherwise False
+
+
+# String Operators
+# ...........................
+# =   -> Checks it value of two operands are eual or not, if yes then condition TRUE
+# -z  -> Checks if given string operand size is non-zero, if it is zero, TRUE
+# -n  -> Checks if given string operand size is non-zero, it is non-zero, TRUE
+# str -> Checks if str is not the empty string: If empty, returns FALSE
+# !=  -> Checks if value of 2 operands are equal or not, if not, TRUE.
+
+
+#File-Test Operators
+#........................
+# -b file  -> Checks if file is a block special file: if yes, TRUE.
+# -c file  -> Checks if file is a character special file, if Yes, TRUE
+# -d file  -> Checks if file is a DIRECTORY, if Yes, TRUE
+# -f file  -> Checks if file is ordinary file and not a dir or special file, if Yes, TRUE
+# -g file  -> Checks if file has its set group ID bit test, if Yes, TRUE
+# -k file  -> Checks if file has its sticky bit set, if Yes, TRUE
+# -c file  -> Checks if file is a character special file, if Yes, TRUE
+# -p file  -> Checks if file is a named pipe; If Yes, TRUE.
+#....more-->>>>>>
+
+
+
+
+
+#--------------------------------------------------------------------------
+
+
+
+
+#SHELL-LOOPS
+#.........................
+
+#For-Loops
+#While-Loops  ---> Repeats instructions until some command/event/condition.
+
+
+
+
+
+
+
+
+
+
+
+
+
+#--------------------------------------------------------------------------
+
+#----Good Habits and Practices.
+# 1. A good shell has Comments explaining the steps
+
+#--------------------------------------------------------------------------
+
+#Author : Morris Higenyi Wabuya.	#Date : Saturday, 20th August, 2022.
+#Memory Stamp: Amila is playing with my jacket button.
+#Grateful Stamp
