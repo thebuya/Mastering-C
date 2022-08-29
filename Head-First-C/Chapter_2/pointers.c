@@ -80,8 +80,9 @@
 		
 		return 0;	
 	}	
-/* ------------------------------------------------------------------------------------------------ */
+/* ----------------------------------------------------------------------------- */
 
 
 
-
+/* Some coders avoid using pointer arithmetic because it’s easy to get it wrong. */
+/* But it can be used to process arrays of data efficiently. */
